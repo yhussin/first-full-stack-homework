@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cars Index</title>
 </head>
 <body>
-    <h1>Working</h1>
+    <ul>
+        <% for (let i = 0; i < cars.length; i++) { %>
+        <li>
+            <a href="/cars/<%= i %>">
+            <%= cars[i].make %> 
+            </a>
+        </li>
+        <% } %> 
+    </ul>
 </body>
 </html>
