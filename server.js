@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 
 const PORT = 4000;
 
 const Car = require('./models/Car')
+
+
+//MIDDLEWARE
+app.use(bodyParser.urlencoded({extended:false}));
+
 
 //ROUTES
 app.get('/', (req, res) => {
@@ -12,9 +18,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/cars', (req, res) => {
-    res.render('index', {
+    res.render('index.ejs', {
         cars: Car,
     });
+});
+
+//new 
+app.get('/cars/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+app.post('/cars', (req, res) => {
+    Car.push(req.body);
+    //should above array be cars?
+    res.redirect('/cars')
 });
 
 app.get('/cars/:index', (req, res) => {
