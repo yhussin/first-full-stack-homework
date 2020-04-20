@@ -10,10 +10,13 @@ const carsController = require('./controllers/carsController');
 const PORT = 4000;
 
 //MIDDLEWARE
+app.use(express.static(`${__dirname}/public`));
+
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 //app.use(bodyParser.json);
 //json is causing an error
+
 
 app.use((req, res, next) => {
     console.log(`Request received, url = ${req.url}, ${new Date().toLocaleTimeString()}`);
