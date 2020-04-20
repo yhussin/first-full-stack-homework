@@ -4,11 +4,18 @@ const router = express.Router();
 //DB
 const db = require('../models');
 
+
 //const Car = require('../models/Car')
 
 router.get('/', (req, res) => {
-    res.render('index.ejs', {
-        cars: Car,
+    db.Car.find({}, (err, allCar) => {
+        if (err) {
+            return console.log(err);
+        }
+        
+        res.render('index.ejs', {
+            cars: Car,
+        });
     });
 });
 
