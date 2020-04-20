@@ -9,11 +9,12 @@
     <ul>
         <% for (let i = 0; i < cars.length; i++) { %>
         <li>
-            <a href="/cars/<%= i %>">
+            <a href="/cars/<%= cars[i]._id %>">
             <%= cars[i].make %> 
             </a>
-            <form action="/cars/<%= i %>?_method=DELETE" method="POST">
-                <a href="/cars/<%= i %>/edit">EDIT</a>
+
+            <form action="/cars/<%= cars[i]._id %>?_method=DELETE" method="POST">
+                <a href="/cars/<%= cars[i]._id %>/edit">EDIT</a>
               <button type="submit">DELETE</button>
             </form>
             

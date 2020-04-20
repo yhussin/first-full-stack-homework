@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Hello! Edit page</h1>
-    <form action="/cars/<%= index %>?_method=PUT" method="POST">
+    <form action="/cars/<%= car._id %>?_method=PUT" method="POST">
         <p>Make: <input type="text" name="make" value="<%= car.make %>" /></p>
         <p>Model: <input type="text" name="model" value="<%= car.model %>" /></p>
         <p>Year: <input type="text" name="year" value="<%= car.year %>" /></p>
