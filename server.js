@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 //app.use(bodyParser.json);
 //json is causing an error
 
-
 app.use((req, res, next) => {
     console.log(`Request received, url = ${req.url}, ${new Date().toLocaleTimeString()}`);
     next();

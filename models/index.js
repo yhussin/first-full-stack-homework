@@ -13,3 +13,7 @@ mongoose.connect(connectionString, {
   .catch((err) => {
       console.log(err);
   });
+
+  module.exports = {
+      Car: require('./Car'),
+  };

@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 //DB
-const Car = require('../models/Car')
+const db = require('../models');
+
+//const Car = require('../models/Car')
 
 router.get('/', (req, res) => {
     res.render('index.ejs', {
