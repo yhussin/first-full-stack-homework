@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+</head>
+<body>
+    <h1>Hello! Edit page</h1>
+    <form action="/cars/<%= index %>?_method=PUT" method="POST">
+        <p>Make: <input type="text" name="make" value="<%= car.make %>" /></p>
+        <p>Model: <input type="text" name="model" value="<%= car.model %>" /></p>
+        <p>Year: <input type="text" name="year" value="<%= car.year %>" /></p>
+        <input type="submit" name="" value="Edit Car" />
+    </form>
+</body>
+</html>

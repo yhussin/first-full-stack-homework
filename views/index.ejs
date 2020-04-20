@@ -12,9 +12,10 @@
             <a href="/cars/<%= i %>">
             <%= cars[i].make %> 
             </a>
-            <form action="/cars/<%= i %>?_method=DELETE method=POST">
+            <form action="/cars/<%= i %>?_method=DELETE" method="POST">
               <button type="submit">DELETE</button>
             </form>
+            <a href="/cars/<%= i %>/edit">EDIT</a>
         </li>
         <% } %> 
     </ul>

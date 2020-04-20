@@ -18,7 +18,7 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     Car.push(req.body);
     //should above array be cars?
-    res.redirect('/cars')
+    res.redirect('/cars');
 });
 
 router.get('/:index', (req, res) => {
@@ -27,9 +27,26 @@ router.get('/:index', (req, res) => {
     });
 });
 
+//edit 
+router.get('/:index/edit', (req, res) => {
+    res.render('edit', {
+        index: req.params.index,
+        car: Car[req.params.index],
+    });
+});
+
+//update
+router.put('/:index', (req, res) => {
+    //console.log(req.body)
+    let car = Car[req.params.index];
+    car = req.body;
+    Car.splice(req.params.index, 1, car);
+    res.redirect(`/cars/${req.params.index}`);
+});
+
 router.delete('/:index', (req, res) => {
-    cars.splice(req.params.index, 1);
-    
+    Car.splice(req.params.index, 1);
+    res.redirect('/cars');
 });
 
 module.exports = router;
